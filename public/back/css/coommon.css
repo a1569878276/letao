@@ -4,3 +4,117 @@
 .mt_150{
   margin-top: 150px;
 }
+/*index页面*/
+body,html{
+  height: 100%;
+}
+.lt_aside{
+  width: 180px;
+  height: 100%;
+  background-color: #222d32;
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  transition: all 0.5s;
+
+}
+.lt_aside>.title{
+  width: 100%;
+  height: 50px;
+  background-color: #367fa9;
+}
+.lt_aside>.title>a{
+  line-height: 50px;
+  font-size: 27px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: #fff;
+}
+a,a:hover{
+  text-decoration: none;
+}
+
+.lt_aside>.user{
+  width: 100%;
+  height: 150px;
+}
+.lt_aside>.user>img{
+  width: 80px;
+  height: 80px;
+  display: block;
+  border-radius: 50%;
+  margin: 30px auto;
+  margin-bottom: 0;
+}
+.lt_aside>.user>p{
+  color: #fff;
+  line-height: 40px;
+  font-size: 16px;
+}
+.lt_aside>.nav>ul{
+  padding-left: 30px;
+}
+.lt_aside>.nav li{
+  list-style: none;
+  line-height:40px;
+  height: 40px;
+  overflow: hidden;
+  transition: all 0.3s;
+
+}
+.lt_aside>.nav li>a{
+  color: #c8c7cc;
+  text-decoration: none;
+
+}
+
+.lt_aside>.nav li >.nav_2{
+  padding-left: 20px;
+  color: #c8c7cc;
+}
+.rt-theme{
+  padding-left: 180px;
+  position: relative;
+  float: right;
+  width: 100%;
+  height: 100%;
+}
+.rt-theme>.set{
+  width: 100%;
+  height: 50px;
+  background-color: #3c8dbc;
+  position: absolute;
+  z-index: 998;
+  padding: 0 10px 0 190px;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+.rt-theme>.set>button{
+  background-color: #3c8dbc;
+  border:none;
+  color: #fff;
+  font-size: 20px;
+  line-height: 50px;
+  display: block;
+  height: 50px;
+  padding: 0 0;
+}
+.rt-theme>.content{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 50px 0 0 180px;
+  left: 0;
+  transition: all 0.5s;
+}
+.content .url_nav{
+  margin-top: 30px;
+}
+.lt_content .charts-1,
+.lt_content .charts-2{
+  width: 45%;
+  height: 400px;
+}
