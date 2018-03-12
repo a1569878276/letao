@@ -54,11 +54,26 @@
       <!--路径导航-->
       <ol class="breadcrumb url_nav">
         <li><a href="javascript:;">管理系统</a></li>
+        <li><a href="javascript:;">分类管理</a></li>
         <li class="active">首页</li>
       </ol>
       <!--内容-->
       <div class="lt_conten">
-
+        <button class="btn btn-default" type="submit" data-toggle="modal" data-target="#myModal2">添加分类</button>
+        <table class="table table-hover table-bordered text-center">
+          <thead>
+          <tr>
+            <td width="20%">序号</td>
+            <td width="80%">分类名称</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          </tbody>
+        </table>
 
       </div>
     </div>
@@ -83,10 +98,40 @@
     </div>
   </div>
 </div>
+<!--模态框2-->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel2">添加分类</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text"  class="form-control addName" placeholder="请输入一个分类名称">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary btn-first">添加</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="lib/jquery/jquery.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="js/common.js"></script>
+<script src="js/first.js"></script>
+
 </body>
 </html>
+<script type="text/html" id="tmp">
+
+  {{ each rows v i }}
+      <tr>
+        <td>{{ i+1 }}</td>
+        <td>{{ v.categoryName }}</td>
+      </tr>
+  {{ /each }}
+</script>

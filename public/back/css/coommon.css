@@ -118,3 +118,11 @@ a,a:hover{
   width: 45%;
   height: 400px;
 }
+/*商品管理页面*/
+.add-goods>*{
+  margin-bottom: 17px;
+}
+.table>tbody>tr>td{
+  vertical-align: middle;
+
+}

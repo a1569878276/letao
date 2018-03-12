@@ -62,25 +62,30 @@
         <table class="table table-hover table-bordered text-center">
           <thead>
           <tr>
-            <td>序号</td>
-            <td>用户名</td>
-            <td>手机号</td>
-            <td>状态</td>
-            <td>操作</td>
+            <td width="10%">序号</td>
+            <td width="30%">用户名</td>
+            <td width="30%">手机号</td>
+            <td width="20%">状态</td>
+            <td width="10%">操作</td>
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>1</td>
-            <td>itcast</td>
-            <td>15111111111</td>
-            <td>正常</td>
-            <td>
-              <button type="button" value="操作" class="btn btn-danger btn-xs">操作</button>
-            </td>
-          </tr>
+          <!--<tr>-->
+            <!--<td>1</td>-->
+            <!--<td>itcast</td>-->
+            <!--<td>15111111111</td>-->
+            <!--<td>正常</td>-->
+            <!--<td>-->
+              <!--<button type="button" value="操作" class="btn btn-danger btn-xs">操作</button>-->
+            <!--</td>-->
+          <!--</tr>-->
           </tbody>
         </table>
+        <div class="text-right">
+            <ul id="pagintor">
+
+            </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -105,9 +110,29 @@
     </div>
   </div>
 </div>
+<!--模态框2-->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel2">温馨提示</h4>
+      </div>
+      <div class="modal-body">
+        您确定进行此操作吗？
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary set_confirm">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="lib/jquery/jquery.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="js/common.js"></script>
@@ -115,18 +140,18 @@
 
 
 <script type="text/html" id="user">
-  {{ each rows v }}
+  {{ each rows v i}}
     <tr>
-      <td>{{ v.id }}</td>
+      <td>{{(page-1)*size+i+1}}</td>
       <td>{{ v.username }}</td>
       <td>{{ v.mobile }}</td>
       <td>{{ v.isDelete===1?'正常':'禁用'}}</td>
       <td>
         {{if v.isDelete===0}}
-        <button type="button"  class="btn btn-success btn-xs">启用</button>
+        <button type="button" data-toggle="modal" data-target="#myModal2" class="btn btn-success btn-xs set "  data-id={{ v.id }} data-isDelete={{  v.isDelete }}>启用</button>
         {{/if}}
         {{if v.isDelete===1}}
-        <button type="button"  class="btn btn-danger btn-xs">禁用</button>
+        <button type="button" data-toggle="modal" data-target="#myModal2" class="btn btn-danger btn-xs set"  data-id={{ v.id }} data-isDelete={{  v.isDelete }}>禁用</button>
         {{/if}}
       </td>
     </tr>
